@@ -15,10 +15,8 @@ body {
   color: white;
   overflow: hidden;
   min-height: 100vh;
-
 }
 
-/* Start Screen */
 #start-screen {
   position: fixed;
   top: 0;
@@ -42,15 +40,9 @@ body {
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
   font-weight: bold;
 }
 
-#start-btn:hover {
-  transform: scale(1.1);
-}
-
-/* Slides */
 .slide {
   display: none;
   height: 100vh;
@@ -60,14 +52,12 @@ body {
   position: absolute;
   width: 100%;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 .active {
   display: flex;
 }
 
-/* Cake */
 .cake {
   position: relative;
   margin-top: 30px;
@@ -76,8 +66,6 @@ body {
   background: linear-gradient(180deg, #fff0f5 0%, #ffb6c1 100%);
   border-radius: 15px 15px 5px 5px;
   display: flex;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .cake::before {
@@ -100,11 +88,10 @@ body {
 .candle {
   width: 18px;
   height: 70px;
-  background: linear-gradient(to right, #ffffff, #f0f0f0);
+  background: white;
   position: absolute;
   top: -35px;
   border-radius: 3px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 .flame {
@@ -116,7 +103,6 @@ body {
   top: -34px;
   left: -3px;
   animation: flicker 0.15s infinite alternate;
-  filter: blur(1px);
 }
 
 @keyframes flicker {
@@ -124,7 +110,6 @@ body {
   to { transform: scaleY(1.3) scaleX(0.8); opacity: 0.8; }
 }
 
-/* Confetti */
 .confetti {
   position: absolute;
   width: 12px;
@@ -139,7 +124,6 @@ body {
   }
 }
 
-/* Photo */
 .photo {
   width: 320px;
   height: 320px;
@@ -156,7 +140,6 @@ body {
   50% { transform: translateY(-15px); }
 }
 
-/* ALL TEXT - 57px */
 h1 {
   font-size: 57px;
   margin: 0 0 20px 0;
@@ -176,71 +159,38 @@ h2 {
   border-radius: 30px;
   margin-top: 25px;
   font-size: 57px;
-  cursor: pointer;
 }
 
-.tap-hint {
-  animation: tapPulse 1.5s infinite;
-}
-
-@keyframes tapPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-}
-
-/* Teddy with Bouquet - Celebration Time Only */
-  <!-- Teddy with Bouquet -->
-<div class="teddy" id="teddy">🧸💐</div
-  .teddy {
+/* TEDDY CODE */
+.teddy {
   position: fixed;
   bottom: 30px;
   right: 30px;
   font-size: 130px;
-  z-index: 50;
+  z-index: 999;
   animation: teddyBounce 2s ease-in-out infinite;
-  display: none;
-}
-
-.teddy.show {
-  display: block;
 }
 
 @keyframes teddyBounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
 }
-
-@keyframes teddyBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@media (max-width: 600px) {
-  h1 { font-size: 40px; }
-  h2 { font-size: 40px; }
-  .photo { width: 240px; height: 240px; }
-  #start-btn { font-size: 40px; padding: 15px 35px; }
-  .teddy { font-size: 60px; }
-}
 </style>
 </head>
 <body>
 
-<!-- Start Screen -->
 <div id="start-screen">
-  <button id="start-btn">🎉 Click to Celebrate! 🎉</button>
+  <button id="start-btn" onclick="startCelebration()">🎉 Click to Celebrate! 🎉</button>
   <p style="margin-top:15px; font-size: 57px;">👆 Tap to blow the candle!</p>
 </div>
 
-<!-- Background Music -->
 <audio id="music" loop>
   <source src="https://cdn.pixabay.com/audio/2024/01/02/audio_51d18e0c1b.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Slide 1: Blow Candle -->
 <div class="slide active" id="slide1" onclick="blowCandle()">
   <h1>Make a Wish! 🎂</h1>
-  <p class="instructions tap-hint">👆 Tap to blow the candle!</p>
+  <p class="instructions">👆 Tap to blow the candle!</p>
   <div class="cake" onclick="blowCandle()">
     <div class="candle" onclick="blowCandle()">
       <div class="flame" id="flame" onclick="blowCandle()"></div>
@@ -248,54 +198,39 @@ h2 {
   </div>
 </div>
 
-<!-- Slide 2: Happy Birthday -->
 <div class="slide" id="slide2">
-  <h1>🎉 Happy Birthday Amannnnnnnnnnn!!! 🎉</h1>
-  <h1>🎊 its your Celebration Time! 🎊</h1>
+  <h1>🎉 Happy Birthday!!! 🎉</h1>
+  <h1>🎊 Celebration Time! 🎊</h1>
 </div>
 
-<!-- Slide 3: Photo & Message -->
 <div class="slide" id="slide3">
   <img src="n.jpg" class="photo" alt="Birthday Person">
-  <div class="notebook">
- <h1> 🎉💗 Happy Birthday Amannnnnnnnnnn 💗🎉<br><br>
+  <h2>You're not just my friend, you are my favourite person 💕<br><br>May Your Life Be Filled With Love, Joy & Success! 💖<br><br>Let all your dreams, hard work, desires pay you soon 🥳🥳<br><br>We will be together forever 🤍🩷♾️<br><br>Stay safe, stay calm, stay you</h2>
+</div>
 
-  You are my best friend and my favorite person 💞<br>
-  Thank you for all the laughs and memories 🌸✨<br>
-  I wish you unlimited happiness and success 🌟💖<br>
-  No matter what, I’ll always stand by your side 💙🤍<br><br>
-we will be together forever
-  Stay amazing 🌈  
-  Stay blessed 🙏  
-  Stay YOU 💫   </h1> 
-  </div>
-
-<!-- Teddy Bear -->
-<div class="teddy">🧸</div>
+<!-- TEDDY WITH BOUQUET -->
+<div class="teddy">🧸💐</div>
 
 <script>
-let isBlown = false;
-
-document.getElementById('start-btn').addEventListener('click', () => {
+function startCelebration() {
   const music = document.getElementById("music");
   music.volume = 0.5;
   music.play().catch(e => console.log("Audio play failed: ", e));
   document.getElementById('start-screen').style.display = 'none';
-});
+}
 
 function blowCandle() {
-  if (isBlown) return;
-  isBlown = true;
-  
   const flame = document.getElementById("flame");
   flame.style.display = "none";
   
   setTimeout(() => {
-    nextSlide("slide1", "slide2");
+    document.getElementById("slide1").classList.remove("active");
+    document.getElementById("slide2").classList.add("active");
     startConfetti();
     
     setTimeout(() => {
-      nextSlide("slide2", "slide3");
+      document.getElementById("slide2").classList.remove("active");
+      document.getElementById("slide3").classList.add("active");
       
       setTimeout(() => {
         document.getElementById("music").pause();
@@ -304,11 +239,6 @@ function blowCandle() {
       
     }, 5000);
   }, 1000);
-}
-
-function nextSlide(currentId, nextId) {
-  document.getElementById(currentId).classList.remove("active");
-  document.getElementById(nextId).classList.add("active");
 }
 
 function startConfetti() {
@@ -325,6 +255,7 @@ function startConfetti() {
 
 </body>
 </html>
+
 
 
 
