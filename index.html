@@ -7,6 +7,21 @@
 
 <style>
 /* General Styles */
+  <div class="teddy">🧸</div>
+  /* Teddy Bear - Bottom Right */
+.teddy {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 80px;
+  z-index: 50;
+  animation: teddyBounce 2s ease-in-out infinite;
+}
+
+@keyframes teddyBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -164,7 +179,17 @@ h1 {
 }
 
 h2 {
-  font-size: 57px;
+ h1 {
+  font-size: 60px;
+  margin: 0 0 20px 0;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+/* Slide 2 Bigger Text */
+#slide2 h1 {
+  font-size: 75px;
+  margin: 15px 0;
+} font-size: 57px;
   margin: 0 20px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   line-height: 1.1;
@@ -285,6 +310,7 @@ function startConfetti() {
 
 </body>
 </html><  
+
 
 
 
